@@ -10,24 +10,24 @@ templateClass: tmpl-post
       <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">{{title}}
       </strong>
     </h1>
-    {%- if author %}
+    {% if author %}
     <p class="text-center text-base leading-6 font-medium text-gray-500">
       <time datetime="{{ page.date | htmlDateString }}"> {{ page.date | readableDate }} by <a>{{ author }}</a>
       </time>
     </p>
-    {%- endif %}
+    {% endif %}
   </div>
   
   <article class="prose lg:prose-xl my-4 mx-auto">
     {{ content | safe }}
   </article>
-{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-{%- if nextPost or previousPost %}
+{% set nextPost = collections.posts | getNextCollectionItem(page) %}
+{% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+{% if nextPost or previousPost %}
 <hr>
 <ul>
-  {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-  {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+  {% if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+  {% if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
 </ul>
 </div>
-{%- endif %}
+{% endif %}
