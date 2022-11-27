@@ -19,7 +19,7 @@
 
     </header>
 
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+    <main {% if templateClass %} class="{{ templateClass }}" {% endif %} >
 
       {{ content | safe }}
     </main>
