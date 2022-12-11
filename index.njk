@@ -6,7 +6,6 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-
 <div class="container clear-both mx-auto flex flex-col place-items-center">
   <h1>
     <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
@@ -29,7 +28,7 @@ eleventyNavigation:
     {% set postslist = collections.posts | head(-3) %}
     {% set postslistCounter = collections.posts | length %}
     {% include "postslist.njk" %}
-    <p class="clear-both my-4 text-right"><span class="editable">More posts can be found in </span><a class="text-blue-600 visited:text-purple-600" href="{{ '/posts/' | url }}"><span class="editable">Updates</span></a>.</p>
+    <p class="clear-both my-4 text-right"><span class="editable">Recent posts can be found in </span><a class="text-blue-600 visited:text-purple-600" href="{{ '/posts/' | url }}"><span class="editable">Updates</span></a>.</p>
   </div>
 
   <h2 class="mt-12">
