@@ -13,7 +13,7 @@ eleventyNavigation:
     </strong>
   </h1>
   <div class="max-w-prose">
-    <p data-cms-bind="#metadata.description"> {{ metadata.description }} </p>
+    <p data-cms-bind="#metadata.description" class="editable"> {{ metadata.description }} </p>
   </div>
 </div>
 
@@ -36,7 +36,7 @@ eleventyNavigation:
       {{partners}}
     </strong>
   </h2>
-  <p data-cms-bind="#metadata.description"> {{ metadata.partners }} </p>
+  <p data-cms-bind="#metadata.description" class="editable"> {{ metadata.partners }} </p>
 
   {% include "_includes/partials/partners.njk" %}
 </div>
